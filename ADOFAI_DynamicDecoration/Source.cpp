@@ -15,7 +15,7 @@ int main() {
 
 	cout << "[ ADOFAI Dynamic Decoration Creator - 얼불춤 동적 장식 제작 도구 ]" << endl << endl;
 	cout << "Developer : CLiF (https://www.youtube.com/@clif-1593)" << endl;
-	cout << "Version : v1.0" << endl << endl;
+	cout << "Version : v1.1" << endl << endl;
 	int parts;
 
 	cout << "이 프로그램은 움직이는 장식을 쉽게 만들도록 도와드리기 위해 제작되었습니다." << endl;
@@ -66,7 +66,9 @@ int main() {
 	cout << "> Number of Frames - 목표 프레임 수 (?/" << frame_num <<") : ";
 	int frame;
 	cin >> frame;
-	if (frame > frame_num || frame <= 0) {
+	if (frame > frame_num || frame <= 0 || cin.fail()) {
+		cin.clear();
+		cin.ignore(100000, '\n');
 		cout << "> The number of Frames is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 		goto ERR_FRAME_NUM;
 	}
@@ -76,7 +78,9 @@ int main() {
 	cout << "> Number of Decorations - 장식 개수 : ";
 	int deco_num;
 	cin >> deco_num;
-	if (frame <= 0) {
+	if (frame <= 0 || cin.fail()) {
+		cin.clear();
+		cin.ignore(100000, '\n');
 		cout << "> The Number of Decorations is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 		goto ERR_DECO_NUM;
 	}
@@ -147,7 +151,7 @@ int main() {
 	for (int i = 0; i < deco_num; i++) {
 		ERR_TILE_NUM:
 		if (deco_num == 1)
-			cout << "> Decoration Begin Tile Number - 장식 시작 타일 번호 :";
+			cout << "> Decoration Begin Tile Number - 장식 시작 타일 번호 : ";
 		else if (i == 0)
 			cout << "> 1st Decoration Begin Tile Number - 1번 장식 시작 타일 번호 : ";
 		else if (i == 1)
@@ -158,7 +162,9 @@ int main() {
 			cout << "> " << i + 1 << "th Decoration Setting Begin Tile Number - " << i + 1 << "번 장식 시작 타일 번호 : ";
 		int num;
 		cin >> num;
-		if (num < 0 || num > total_tile_num) {
+		if (num < 0 || num > total_tile_num || cin.fail()) {
+			cin.clear();
+			cin.ignore(100000, '\n');
 			cout << "> Decoration Begin Tile Number is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 			goto ERR_TILE_NUM;
 		}
@@ -170,7 +176,7 @@ int main() {
 	for (int i = 0; i < deco_num; i++) {
 		ERR_BEGIN_OFFSET:
 		if (deco_num == 1)
-			cout << "> Decoration Beginning Angle Offset - 장식 시작 각도 오프셋 :";
+			cout << "> Decoration Beginning Angle Offset - 장식 시작 각도 오프셋 : ";
 		else if (i == 0)
 			cout << "> 1st Decoration Beginning Angle Offset - 1번 장식 시작 각도 오프셋 : ";
 		else if (i == 1)
@@ -181,7 +187,9 @@ int main() {
 			cout << "> " << i + 1 << "th Decoration Beginning Angle Offset - " << i + 1 << "번 장식 시작 각도 오프셋 : ";
 		int num;
 		cin >> num;
-		if (num < 0) {
+		if (num < 0 || cin.fail()) {
+			cin.clear();
+			cin.ignore(100000, '\n');
 			cout << "> Angle Offset is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 			goto ERR_BEGIN_OFFSET;
 		}
@@ -193,7 +201,9 @@ int main() {
 	cout << "> Animation Angle Offset - 장식 애니메이션 각도 오프셋 : ";
 	double angle_offset;
 	cin >> angle_offset;
-	if (angle_offset <= 0) {
+	if (angle_offset <= 0 || cin.fail()) {
+		cin.clear();
+		cin.ignore(100000, '\n');
 		cout << "> Angle Offset is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 		goto ERR_OFFSET;
 	}
@@ -203,7 +213,9 @@ int main() {
 	cout << "> Number of Repetitions - 반복 횟수 : ";
 	double loop;
 	cin >> loop;
-	if (loop < 0) {
+	if (loop < 0 || cin.fail()) {
+		cin.clear();
+		cin.ignore(100000, '\n');
 		cout << "> The Number of Repetitions is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
 		goto ERR_LOOP;
 	}
@@ -214,7 +226,7 @@ int main() {
 	vector<Mat> images;
 	cout << "> Extracting Frames from the Video . . ." << endl;
 	ExtractImages(video_path, images, (double)frame_num / (double)frame);
-	while (deco_num > images.size()) {
+	while (frame < images.size()) {
 		images.pop_back();
 	}
 
