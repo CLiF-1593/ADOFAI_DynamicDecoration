@@ -6,9 +6,6 @@
 오류를 발견하시거나 추가 기능을 요청하시고 싶으시다면 디스코드 DM 부탁드립니다.    
 If you find an error or want to request an additional function, please contact by Discord DM.   
 (CLiF [클리프] #8404)   
-   
-Developer : CLiF   
-Version : 1.1  
 
 #### How to use : https://www.youtube.com/watch?v=6zYcOKgoHqc   
    
