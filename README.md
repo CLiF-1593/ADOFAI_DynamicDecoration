@@ -9,8 +9,7 @@ If you find an error or want to request an additional function, please contact b
    
 Developer : CLiF   
 Version : 1.1  
-   
-#### Release : https://drive.google.com/file/d/1Fu_MUrzc3qDpN1D_NSpTnEIS_Onja23B/view?usp=sharing   
+
 #### How to use : https://www.youtube.com/watch?v=6zYcOKgoHqc   
    
 프로그램 사용 시 출처를 밝혀주세요.   
