@@ -159,7 +159,7 @@ int main() {
 		else if (i == 2)
 			cout << "> 3rd Decoration Begin Tile Number - 3번 장식 시작 타일 번호 : ";
 		else
-			cout << "> " << i + 1 << "th Decoration Setting Begin Tile Number - " << i + 1 << "번 장식 시작 타일 번호 : ";
+			cout << "> " << i + 1 << "th Decoration Begin Tile Number - " << i + 1 << "번 장식 시작 타일 번호 : ";
 		int num;
 		cin >> num;
 		if (num < 0 || num > total_tile_num || cin.fail()) {
