@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <ctime>
 #include <vector>
+#include <filesystem>
 #include "color.h"
 #include "File.h"
 #include "ImageProcessing.h"
@@ -15,7 +16,7 @@ int main() {
 
 	cout << "[ ADOFAI Dynamic Decoration Creator - 얼불춤 동적 장식 제작 도구 ]" << endl << endl;
 	cout << "Developer : CLiF (https://www.youtube.com/@clif-1593)" << endl;
-	cout << "Version : v1.1" << endl << endl;
+	cout << "Version : v1.2" << endl << endl;
 	int parts;
 
 	cout << "이 프로그램은 움직이는 장식을 쉽게 만들도록 도와드리기 위해 제작되었습니다." << endl;
@@ -144,7 +145,7 @@ int main() {
 		cout << "> File Name is empty. - 파일 이름이 비어있음" << endl;
 		goto ERR_FILENAME;
 	}
-	cout << " └  File Name Format : " << deco_file_name << " (Frame_Number).png" << endl;
+	cout << " └  File Name Format : " << deco_file_name << "\\(Frame_Number).png" << endl;
 	cout << endl;
 
 	vector<int> tile_num;
@@ -250,6 +251,7 @@ int main() {
 	WriteJson(adofai, adofai_path);
 
 	cout << "> Saving Decoration Files . . ." << endl;
+	filesystem::create_directory(folder_path + deco_file_name);
 	SaveImages(folder_path, deco_file_name, images);
 	cout << endl;
 	cout << "> Completed" << endl << endl;
@@ -269,7 +271,8 @@ int main() {
 		cout << "> Undoing ADOFAI File . . ." << endl;
 		WriteJson(previous_adofai, adofai_path);
 		cout << "> Deleting Decoration Files . . ." << endl;
-		RemoveImages(folder_path, deco_file_name, images.size());
+		std::filesystem::remove_all(folder_path + deco_file_name);
+		//RemoveImages(folder_path, deco_file_name, images.size());
 	}
 
 	cout << endl << endl;

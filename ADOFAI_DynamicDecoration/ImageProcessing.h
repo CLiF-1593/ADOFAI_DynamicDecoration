@@ -6,7 +6,7 @@
 using namespace std;
 using namespace cv;
 
-#define DecoFileName(deco_name, i) (deco_name + " " + to_string(i) + ".png")
+#define DecoFileName(deco_name, i) (deco_name + "\\" + to_string(i) + ".png")
 
 int GetVideoFrame(const string video_path);
 
