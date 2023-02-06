@@ -12,7 +12,8 @@ using namespace std;
 
 int main() {
 	cv::utils::logging::setLogLevel(cv::utils::logging::LogLevel::LOG_LEVEL_SILENT);
-	//std::locale::global(std::locale("ko_KR.UTF-8")); //.cpp
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 
 	cout << "[ ADOFAI Dynamic Decoration Creator - 얼불춤 동적 장식 제작 도구 ]" << endl << endl;
 	cout << "Developer : CLiF (https://www.youtube.com/@clif-1593)" << endl;
@@ -79,7 +80,7 @@ int main() {
 	cout << "> Number of Decorations - 장식 개수 : ";
 	int deco_num;
 	cin >> deco_num;
-	if (frame <= 0 || cin.fail()) {
+	if (deco_num <= 0 || cin.fail()) {
 		cin.clear();
 		cin.ignore(100000, '\n');
 		cout << "> The Number of Decorations is out of the range. - 잘못된 입력 (범위 넘어감)" << endl;
