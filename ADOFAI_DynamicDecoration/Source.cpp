@@ -24,6 +24,7 @@ int main() {
 	cout << "This program was developed to help you to make dynamic decoration easier." << endl << endl;
 	cout << "오류를 발견하시거나 추가 기능을 요청하시고 싶으시다면 디스코드 DM 부탁드립니다. (CLiF [클리프] #8404)" << endl;
 	cout << "If you find an error or want to request an additional function, please contact by Discord DM." << endl << endl;
+	cout << "또한 장식이나 태그 이름 등은 무조건 영어 혹은 기본적인 특수문자만 사용해주세요. (아스키 코드 1byte로 표현되는 문자)" << endl << endl;
 	system("pause");
 	cout << endl << endl;
 
