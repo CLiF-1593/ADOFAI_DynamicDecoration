@@ -22,6 +22,11 @@ Json::Value AddDecoration(int floor, string deco_tag) {
     ret["parallax"].append(0);
     ret["tag"] = deco_tag;
     ret["imageSmoothing"] = "Enabled";
+	ret["blendMode"] = "None";
+	ret["maskingType"] = "None";
+	ret["useMaskingDepth"] = "Disabled";
+	ret["maskingFrontDepth"] = -1;
+	ret["maskingBackDepth"] = -1;
     ret["failHitbox"] = "Disabled";
     ret["failHitboxType"] = "Box";
     ret["failHitboxScale"].append(100);

@@ -17,7 +17,7 @@ int main() {
 
 	cout << "[ ADOFAI Dynamic Decoration Creator - 얼불춤 동적 장식 제작 도구 ]" << endl << endl;
 	cout << "Developer : CLiF (https://www.youtube.com/@clif-1593)" << endl;
-	cout << "Version : v1.2" << endl << endl;
+	cout << "Version : v1.3" << endl << endl;
 	int parts;
 
 	cout << "이 프로그램은 움직이는 장식을 쉽게 만들도록 도와드리기 위해 제작되었습니다." << endl;

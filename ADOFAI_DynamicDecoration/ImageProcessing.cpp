@@ -36,7 +36,7 @@ void ExtractImages(const string video_path, vector<Mat>& images, double extract_
 			register rgb clr_rgb;
 			register hsv clr_hsv;
 			cv::cvtColor(src_img, input_bgra, COLOR_BGR2BGRA);
-			for (register int y = 0; y < input_bgra.rows; ++y) {
+			/*for (register int y = 0; y < input_bgra.rows; ++y) {
 				for (register int x = 0; x < input_bgra.cols; ++x) {
 					register cv::Vec4b& pixel = input_bgra.at<cv::Vec4b>(y, x);
 					clr_rgb.r = pixel[0];
@@ -51,7 +51,7 @@ void ExtractImages(const string video_path, vector<Mat>& images, double extract_
 					pixel[2] = clr_rgb.b;
 					pixel[3] = alpha;
 				}
-			}
+			}*/
 			images.push_back(input_bgra);
 			cnt += extract_unit;
 		}
