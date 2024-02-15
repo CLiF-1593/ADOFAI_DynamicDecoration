@@ -53,5 +53,8 @@
     <ClInclude Include="EventJson.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ProtableFileDialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

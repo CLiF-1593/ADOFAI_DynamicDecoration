@@ -76,7 +76,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\Development\ProgrammingProject\Tool\ADOFAI_Project\MainProject\ADOFAI_DynamicDecoration\ADOFAI_DynamicDecoration\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Development\ProgrammingProject\Tool\ADOFAI_Project\MainProject\ADOFAI_DynamicDecoration\ADOFAI_DynamicDecoration\include;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\Development\ProgrammingProject\Tool\ADOFAI_Project\MainProject\ADOFAI_DynamicDecoration\ADOFAI_DynamicDecoration\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -129,7 +129,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -155,6 +155,7 @@
     <ClInclude Include="json\json-forwards.h" />
     <ClInclude Include="json\json.h" />
     <ClInclude Include="ImageProcessing.h" />
+    <ClInclude Include="ProtableFileDialogs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
