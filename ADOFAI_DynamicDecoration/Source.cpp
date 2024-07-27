@@ -253,7 +253,7 @@ int main() {
 	WriteJson(adofai, adofai_path);
 
 	cout << "> Saving Decoration Files . . ." << endl;
-	filesystem::create_directory(folder_path + deco_file_name);
+	filesystem::create_directory(filesystem::path(filesystem::u8path(folder_path + deco_file_name)));
 	SaveImages(folder_path, deco_file_name, images);
 	cout << endl;
 	cout << "> Completed" << endl << endl;

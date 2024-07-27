@@ -61,7 +61,7 @@ void ExtractImages(const string video_path, vector<Mat>& images, double extract_
 
 void SaveImages(const string save_path, const string deco_name, vector<Mat>& images) {
 	for (int i = 0; i < images.size(); i++) {
-		imwrite(save_path + DecoFileName(deco_name, i), images[i]);
+		imwrite(filesystem::path(filesystem::u8path(save_path + DecoFileName(deco_name, i))).string(), images[i]);
 	}
 }
 

@@ -48,7 +48,7 @@ void WriteJson(const Json::Value& value, string location) {
 	builder.settings_["emitUTF8"] = true;
 	builder.settings_["indentation"] = " ";
 	std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-	std::ofstream outputFileStream(location);
+	std::ofstream outputFileStream(filesystem::path(filesystem::u8path(location)));
 	char bom[] = { (char)239, (char)187, (char)191 };
 	outputFileStream.write(bom, 3);
 	writer->write(value, &outputFileStream);
